@@ -1,4 +1,4 @@
-{{- if ne .Values.global.mode "quickstart" }}
+{{- if eq .Values.global.mode "quickstart" }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
