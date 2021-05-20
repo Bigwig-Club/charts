@@ -17,7 +17,7 @@ metadata:
   name: nacos-cm
 data:
   {{- with .Values.custom.db }}
-  mysql.db.host: {{.host}}
+  mysql.db.host: {{ .host }}
   mysql.db.name: {{ .name }}
   mysql.port: {{ .port }}
   mysql.user: {{ .username }}
