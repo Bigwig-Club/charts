@@ -10,7 +10,7 @@ data:
   mysql.user: {{ .user }}
   mysql.password: {{ .password }}
   {{- end }}
-  {{- else if or (eq .Values.global.mode "standalone") (eq .Values.global.mode "cluster") }}
+{{- else if eq .Values.global.mode "standalone" }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -23,7 +23,17 @@ data:
   mysql.user: {{ .username }}
   mysql.password: {{ .password }}
   {{- end }}
+{{- else if eq .Values.global.mode "cluster" }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nacos-cm
+data:
+  {{- with .Values.custom.db }}
+  mysql.db.host: {{ .host }}
+  mysql.db.name: {{ .name }}
+  mysql.port: {{ .port }}
+  mysql.user: {{ .username }}
+  mysql.password: {{ .password }}
   {{- end }}
-
-
-
+{{- end }}
