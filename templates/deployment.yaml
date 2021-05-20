@@ -57,7 +57,7 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: nacos-cm
-                  key: mysql.db.name
+                  key: custom.db.name
             - name: MYSQL_SERVICE_PORT
               valueFrom:
                 configMapKeyRef:
@@ -85,12 +85,12 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: nacos-cm
-                  key: mysql.db.host
+                  key: custom.db.host
             - name: MYSQL_SERVICE_DB_NAME
               valueFrom:
                 configMapKeyRef:
                   name: nacos-cm
-                  key: mysql.db.name
+                  key: custom.db.name
             - name: MYSQL_SERVICE_PORT
               valueFrom:
                 configMapKeyRef:
@@ -133,12 +133,12 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: nacos-cm
-                  key: mysql.db.host
+                  key: custom.db.host
             - name: MYSQL_SERVICE_DB_NAME
               valueFrom:
                 configMapKeyRef:
                   name: nacos-cm
-                  key: mysql.db.name
+                  key: custom.db.name
             - name: MYSQL_SERVICE_PORT
               valueFrom:
                 configMapKeyRef:
